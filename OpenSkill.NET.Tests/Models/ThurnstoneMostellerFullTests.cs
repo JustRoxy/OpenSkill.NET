@@ -9,14 +9,17 @@ public class ThurnstoneMostellerFullTests
     private Team team1;
     private Team team2;
     private Team team3;
-    private readonly OpenSkill _openSkill = new(Options.Default);
+
+    private readonly OpenSkill _openSkill = new(new Options
+    {
+        Model = new ThurnstoneMostellerFull()
+    });
 
     public ThurnstoneMostellerFullTests()
     {
         team1 = Team.With(r);
         team2 = Team.With(r, r);
         team3 = Team.With(r, r, r);
-        _openSkill.Options.Model = new ThurnstoneMostellerFull();
     }
 
     [Fact]

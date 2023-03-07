@@ -5,7 +5,7 @@ namespace OpenSkill.NET.Tests;
 
 public class UnwindTests
 {
-    private readonly Utils _utils = new(Options.Default);
+    private readonly Utils _utils = new(new Options());
 
     [Fact]
     public void ZeroItems()

@@ -5,16 +5,6 @@ namespace OpenSkill.NET;
 
 public class Options
 {
-    public static Options Default => new()
-    {
-        Z = Constants.Z,
-        Mu = Constants.MU,
-        Epsilon = Constants.EPSILON,
-        Beta = Constants.BETA,
-        Model = new PlackettLuce(),
-        PreventSigmaIncrease = false
-    };
-
     public double Z { get; set; } = Constants.Z;
     public double Mu { get; set; } = Constants.MU;
 

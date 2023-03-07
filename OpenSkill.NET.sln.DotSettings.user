@@ -25,6 +25,8 @@
     &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.Models.ThurnstoneMostellerFullTests.CustomGammaK2&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.Models.ThurnstoneMostellerFullTests.CustomGammaK5&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.Models.ThurnstoneMostellerFullTests.TiersInRank&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.Models.BradleyTerryFullTests.TwoTeams&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.Models.BradleyTerryFullTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	</wpf:ResourceDictionary>

@@ -5,7 +5,7 @@ namespace OpenSkill.NET.Tests;
 
 public class PredictWinTests
 {
-    private readonly OpenSkill _openSkill = new(Options.Default);
+    private readonly OpenSkill _openSkill = new(new Options());
 
     private Rating a1 = Rating.Default;
     private Rating a2 = new(32.444, 5.123);
