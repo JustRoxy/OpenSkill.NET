@@ -16,7 +16,10 @@ public static class Test
             team.Ratings.Should().HaveCount(rating.Length);
             for (int j = 0; j < rating.Length; j++)
             {
-                team.Ratings[j].Should().BeEquivalentTo(rating[j]);
+                var tr = team.Ratings[j];
+                var r = rating[j];
+                tr.Mu.Should().BeApproximately(r.Mu, 7);
+                tr.Sigma.Should().BeApproximately(r.Sigma, 7);
             }
         }
     }

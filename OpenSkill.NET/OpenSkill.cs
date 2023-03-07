@@ -4,23 +4,23 @@ namespace OpenSkill.NET;
 
 public class OpenSkill
 {
-    private readonly Options _options;
+    public Options Options { get; }
     private readonly Utils _utils;
 
     public OpenSkill(Options options)
     {
-        _options = options;
+        Options = options;
         _utils = new Utils(options);
     }
 
     public List<Team> Rate(List<Team> teams)
     {
-        var model = _options.Model;
+        var model = Options.Model;
 
         var tauScaled = teams;
-        if (_options.Tau is not null)
+        if (Options.Tau is not null)
         {
-            var tauSquared = _options.Tau.Value * _options.Tau.Value;
+            var tauSquared = Options.Tau.Value * Options.Tau.Value;
             tauScaled = teams.Select(x =>
                     new Team(x.Ratings
                         .Select(v => new Rating(v.Mu, Math.Sqrt(v.Sigma * v.Sigma + tauSquared)))
@@ -28,11 +28,11 @@ public class OpenSkill
                 .ToList();
         }
 
-        var (sortedTeams, tenet) = _utils.Unwind(_options.Tenet(tauScaled.Count), tauScaled);
-        var result = model.Rate(sortedTeams, _options);
+        var (sortedTeams, tenet) = _utils.Unwind(Options.Tenet(tauScaled.Count), tauScaled);
+        var result = model.Rate(sortedTeams, Options);
         (result, _) = _utils.Unwind(tenet, result);
 
-        if (_options.Tau is not null && _options.PreventSigmaIncrease)
+        if (Options.Tau is not null && Options.PreventSigmaIncrease)
         {
             for (var i = 0; i < result.Count; i++)
             {
@@ -56,7 +56,7 @@ public class OpenSkill
         var ratings = _utils.TeamRating(teams);
         var n = ratings.Count;
         var denom = n * ((double)n - 1) / 2d;
-        var betasq = _options.BetaSq;
+        var betasq = Options.BetaSq;
 
         return ratings.Select((a, i) =>
         {

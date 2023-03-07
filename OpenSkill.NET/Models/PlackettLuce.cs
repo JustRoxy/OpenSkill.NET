@@ -2,7 +2,7 @@ using OpenSkill.NET.Types;
 
 namespace OpenSkill.NET.Models;
 
-public class PlackettLuce : Model
+public class PlackettLuce : OpenSkillModel
 {
     public override List<Team> Rate(List<Team> teams, Options options)
     {

@@ -41,7 +41,7 @@ public class Options
     public double TwoBetaSq => 2 * BetaSq;
 
     public Func<Gamma, double> Gamma { get; set; } = g => Math.Sqrt(g.SigmaSq) / g.C;
-    public Model Model { get; set; } = new PlackettLuce();
+    public OpenSkillModel Model { get; set; } = new PlackettLuce();
     public List<double>? Rank { get; set; }
     public List<double>? Score { get; set; }
 
