@@ -1,6 +1,6 @@
-using OpenSkill.NET.Types;
+using OpenSkill.Types;
 
-namespace OpenSkill.NET.Models;
+namespace OpenSkill.Models;
 
 public class PlackettLuce : OpenSkillModel
 {
@@ -60,7 +60,7 @@ public class PlackettLuce : OpenSkillModel
                 var lsigmaSq = sigma * sigma / iRating.SigmaSq;
                 mu += lsigmaSq * omega;
                 sigma *= Math.Sqrt(Math.Max(1 - lsigmaSq * delta, epsilon));
-                intermediateResult.Add(new Rating(mu, sigma));
+                intermediateResult.Add(new Rating(mu, sigma, jRating.Reference));
             }
 
             result.Add(new Team(intermediateResult));

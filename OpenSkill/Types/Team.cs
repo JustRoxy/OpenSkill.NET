@@ -1,4 +1,4 @@
-namespace OpenSkill.NET.Types;
+namespace OpenSkill.Types;
 
 public class Team
 {

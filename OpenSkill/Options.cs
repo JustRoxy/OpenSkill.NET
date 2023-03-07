@@ -1,7 +1,7 @@
-using OpenSkill.NET.Models;
-using OpenSkill.NET.Types;
+using OpenSkill.Models;
+using OpenSkill.Types;
 
-namespace OpenSkill.NET;
+namespace OpenSkill;
 
 public class Options
 {
@@ -39,9 +39,4 @@ public class Options
         Rank ?? Score?.Select(x => -x).ToList() ?? Enumerable.Range(0, teamSize).Select(x => (double)x).ToList();
 
     public bool PreventSigmaIncrease { get; set; }
-
-    public Rating DefaultRating()
-    {
-        return new Rating(Mu, Sigma);
-    }
 }

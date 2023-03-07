@@ -1,6 +1,6 @@
-using OpenSkill.NET.Types;
+using OpenSkill.Types;
 
-namespace OpenSkill.NET.Tests.Models;
+namespace OpenSkill.Tests.Models;
 
 public class PlackettLuceTests
 {

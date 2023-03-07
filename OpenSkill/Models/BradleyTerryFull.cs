@@ -1,6 +1,6 @@
-using OpenSkill.NET.Types;
+using OpenSkill.Types;
 
-namespace OpenSkill.NET.Models;
+namespace OpenSkill.Models;
 
 public class BradleyTerryFull : OpenSkillModel
 {
@@ -59,7 +59,7 @@ public class BradleyTerryFull : OpenSkillModel
                 var sigma = jRating.Sigma;
                 mu += Math.Pow(sigma, 2) / iRating.SigmaSq * omega;
                 sigma *= Math.Sqrt(Math.Max(1 - Math.Pow(sigma, 2) / iRating.SigmaSq * delta, epsilon));
-                intermediateResults.Add(new Rating(mu, sigma));
+                intermediateResults.Add(new Rating(mu, sigma, jRating.Reference));
             }
 
             result.Add(new Team(intermediateResults));

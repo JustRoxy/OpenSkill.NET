@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSkill.NET", "OpenSkill.NET\OpenSkill.NET.csproj", "{74C0F690-0138-4511-9A4A-570675DA7C83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSkill", "OpenSkill\OpenSkill.csproj", "{74C0F690-0138-4511-9A4A-570675DA7C83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSkill.NET.Tests", "OpenSkill.NET.Tests\OpenSkill.NET.Tests.csproj", "{9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSkill.Tests", "OpenSkill.Tests\OpenSkill.Tests.csproj", "{9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

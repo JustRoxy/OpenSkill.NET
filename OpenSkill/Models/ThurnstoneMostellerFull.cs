@@ -1,6 +1,6 @@
-using OpenSkill.NET.Types;
+using OpenSkill.Types;
 
-namespace OpenSkill.NET.Models;
+namespace OpenSkill.Models;
 
 public class ThurnstoneMostellerFull : OpenSkillModel
 {
@@ -61,12 +61,12 @@ public class ThurnstoneMostellerFull : OpenSkillModel
                 var sigma = jRating.Sigma;
                 mu += Math.Pow(sigma, 2) / iRating.SigmaSq * omega;
                 sigma *= Math.Sqrt(Math.Max(1 - Math.Pow(sigma, 2) / iRating.SigmaSq * delta, epsilon));
-                intermediateResult.Add(new Rating(mu, sigma));
+                intermediateResult.Add(new Rating(mu, sigma, jRating.Reference));
             }
-            
+
             result.Add(new Team(intermediateResult));
         }
-        
+
         return result;
     }
 }

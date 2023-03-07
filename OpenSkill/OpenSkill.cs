@@ -1,6 +1,6 @@
-using OpenSkill.NET.Types;
+using OpenSkill.Types;
 
-namespace OpenSkill.NET;
+namespace OpenSkill;
 
 public class OpenSkill
 {
@@ -23,7 +23,7 @@ public class OpenSkill
             var tauSquared = Options.Tau.Value * Options.Tau.Value;
             tauScaled = teams.Select(x =>
                     new Team(x.Ratings
-                        .Select(v => new Rating(v.Mu, Math.Sqrt(v.Sigma * v.Sigma + tauSquared)))
+                        .Select(v => new Rating(v.Mu, Math.Sqrt(v.Sigma * v.Sigma + tauSquared), v.Reference))
                         .ToList()))
                 .ToList();
         }

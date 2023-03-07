@@ -1,6 +1,6 @@
 using MathNet.Numerics.Distributions;
 
-namespace OpenSkill.NET;
+namespace OpenSkill;
 
 public static class Statistics
 {

@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\OpenSkill.NET\OpenSkill.NET.csproj" />
+      <ProjectReference Include="..\OpenSkill\OpenSkill.csproj" />
     </ItemGroup>
 
 </Project>

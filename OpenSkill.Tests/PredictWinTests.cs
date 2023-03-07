@@ -1,7 +1,7 @@
 using FluentAssertions;
-using OpenSkill.NET.Types;
+using OpenSkill.Types;
 
-namespace OpenSkill.NET.Tests;
+namespace OpenSkill.Tests;
 
 public class PredictWinTests
 {

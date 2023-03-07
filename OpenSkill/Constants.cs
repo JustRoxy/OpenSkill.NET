@@ -1,6 +1,6 @@
-using OpenSkill.NET.Types;
+using OpenSkill.Types;
 
-namespace OpenSkill.NET;
+namespace OpenSkill;
 
 public static class Constants
 {
