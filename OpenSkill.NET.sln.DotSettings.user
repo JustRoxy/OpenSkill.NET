@@ -16,6 +16,14 @@
     &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.PlackettLuceTests.Team1_Team1_Team1_Team1&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.PlackettLuceTests.Team1_Team1_Team1_Team1_Team1&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.PlackettLuceTests.Team3_Team1_Team2&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.RateTests.AcceptsTauTerm&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.RateTests.PreventsSigmaFromRising&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.RateTests.EnsuresSigmaIncreases&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.UnwindTests.TwoItems&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.UnwindTests.Shuffle&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.UnwindTests.NonIntegerRanks&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.UnwindTests.FourItems&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::9EAA45D2-8EC1-4EB9-B53F-EC98DC3A349D::net7.0::OpenSkill.NET.Tests.UnwindTests.FiveItems&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fd3ddb9a_002D5523_002D4c64_002D8249_002D1ce39d09503f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="PlackettLuceTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;

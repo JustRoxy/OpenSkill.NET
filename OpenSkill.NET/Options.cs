@@ -42,8 +42,11 @@ public class Options
 
     public Func<Gamma, double> Gamma { get; set; } = g => Math.Sqrt(g.SigmaSq) / g.C;
     public Model Model { get; set; } = new PlackettLuce();
-    public int[]? Rank { get; set; }
-    public int[]? Score { get; set; }
+    public List<double>? Rank { get; set; }
+    public List<double>? Score { get; set; }
+
+    public List<double> Tenet(int teamSize) =>
+        Rank ?? Score?.Select(x => -x).ToList() ?? Enumerable.Range(0, teamSize).Select(x => (double)x).ToList();
 
     public bool PreventSigmaIncrease { get; set; }
 

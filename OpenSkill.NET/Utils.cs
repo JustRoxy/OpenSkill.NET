@@ -19,8 +19,8 @@ public class Utils
 
     public int[] Rankings(List<Team> teams)
     {
-        var teamScores = _options.Rank ?? Enumerable.Range(0, teams.Count).ToArray();
-        var outRank = new int[teamScores.Length];
+        var teamScores = _options.Tenet(teams.Count);
+        var outRank = new int[teamScores.Count];
         var s = 0;
         for (var i = 0; i < teams.Count; i++)
         {
@@ -61,6 +61,23 @@ public class Utils
         var rr = ratings.Select(x => x.SigmaSq + _options.BetaSq).Aggregate(0d, (x, y) => x + y);
 
         return Math.Sqrt(rr);
+    }
+
+    public (List<T> teams, List<double> tenet) Unwind<T>(List<double> tenet, IEnumerable<T> teams)
+    {
+        List<(double, int, T)> result = teams.Select((t, i) => (tenet[i], i, t))
+            .OrderBy(x => x.Item1)
+            .ToList();
+
+        var dest = new List<T>();
+        var derank = new List<double>();
+        foreach (var (_, i, o) in result)
+        {
+            dest.Add(o);
+            derank.Add(i);
+        }
+
+        return (dest, derank);
     }
 
     public double[] UtilSumQ(List<TeamRating> ratings, double c)

@@ -16,24 +16,39 @@ public class OpenSkill
     public List<Team> Rate(List<Team> teams)
     {
         var model = _options.Model;
+
+        var tauScaled = teams;
         if (_options.Tau is not null)
         {
             var tauSquared = _options.Tau.Value * _options.Tau.Value;
-            teams.ForEach(x => x.Ratings.ForEach(v => { v.Sigma = Math.Sqrt(v.Sigma * v.Sigma + tauSquared); }));
+            tauScaled = teams.Select(x =>
+                    new Team(x.Ratings
+                        .Select(v => new Rating(v.Mu, Math.Sqrt(v.Sigma * v.Sigma + tauSquared)))
+                        .ToList()))
+                .ToList();
         }
 
-        var result = model.Rate(teams, _options);
-        return result;
+        var (sortedTeams, tenet) = _utils.Unwind(_options.Tenet(tauScaled.Count), tauScaled);
+        var result = model.Rate(sortedTeams, _options);
+        (result, _) = _utils.Unwind(tenet, result);
 
         if (_options.Tau is not null && _options.PreventSigmaIncrease)
         {
-            for (var i = 0; i < teams.Count; i++)
+            for (var i = 0; i < result.Count; i++)
             {
-                for (var j = 0; j < teams[i].Ratings.Count; j++)
+                for (var j = 0; j < result[i].Ratings.Count; j++)
                 {
+                    var rating = result[i].Ratings[j];
+                    var originalRating = teams[i].Ratings[j];
+                    if (rating.Sigma > originalRating.Sigma)
+                    {
+                        rating.Sigma = originalRating.Sigma;
+                    }
                 }
             }
         }
+
+        return result;
     }
 
     public IEnumerable<double> PredictWin(List<Team> teams)

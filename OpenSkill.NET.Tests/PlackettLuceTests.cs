@@ -1,4 +1,3 @@
-using FluentAssertions;
 using OpenSkill.NET.Types;
 
 namespace OpenSkill.NET.Tests;
@@ -59,7 +58,7 @@ public class PlackettLuceTests
     [Fact]
     void Team1_Team1_Team1_Team1_Team1()
     {
-        var result = _openSkill.Rate(new List<Team>() { team1, team1, team1, team1, team1 });
+        var result = _openSkill.Rate(new List<Team> { team1, team1, team1, team1, team1 });
         result.Equivalent(new[]
         {
             new[] { new Rating(27.666666666666668, 8.290556877154474) },
@@ -73,7 +72,7 @@ public class PlackettLuceTests
     [Fact]
     void Team3_Team1_Team2()
     {
-        var result = _openSkill.Rate(new List<Team>()
+        var result = _openSkill.Rate(new List<Team>
         {
             team3,
             team1,
