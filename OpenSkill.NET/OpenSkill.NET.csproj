@@ -5,10 +5,16 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>default</LangVersion>
+        <Version>1.0.0-rc2</Version>
+        <Title>OpenSkill.NET</Title>
+        <Authors>JustRoxy</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>OpenSkill port of openskill.py</Description>
+        <RepositoryUrl>https://github.com/JustRoxy/OpenSkill.NET</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+        <PackageReference Include="MathNet.Numerics" Version="5.0.0"/>
     </ItemGroup>
 
 </Project>
