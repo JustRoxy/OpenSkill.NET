@@ -1,3 +1,4 @@
+using MathNet.Numerics.Statistics;
 using OpenSkill.Types;
 
 namespace OpenSkill;
@@ -49,6 +50,46 @@ public class OpenSkill
         }
 
         return result;
+    }
+
+    private List<(int rank, double probability)> PredictRank(List<Team> pureTeams)
+    {
+        var n = pureTeams.Count;
+        var totalPlayerCount = pureTeams.Sum(x => x.Ratings.Count);
+        var denom = n * (n - 1d) / 2;
+        var drawProbability = 1 / totalPlayerCount;
+        var drawMargin = Math.Sqrt(totalPlayerCount) * Options.Beta *
+                         Statistics.PhiMajorInverse((1 + drawProbability) / 2d);
+
+        var teams = _utils.TeamRating(pureTeams);
+
+        double[] pairwiseProbabilities = new double[teams.Count];
+
+        for (int i = 0; i < teams.Count; i++)
+        {
+            var pairA = teams[i];
+
+            foreach (var pairB in teams.Where(x => x != pairA))
+            {
+                var muA = pairA.Mu;
+                var sigmaA = pairA.SigmaSq;
+                var muB = pairB.Mu;
+                var sigmaB = pairB.SigmaSq;
+
+                var probability = Statistics.PhiMajor((muA - muB - drawMargin) /
+                                                      Math.Sqrt(n * Options.BetaSq +
+                                                                sigmaA + sigmaB));
+                pairwiseProbabilities[i] += probability;
+            }
+        }
+
+        var rankedProbability = pairwiseProbabilities.Select(x => Math.Abs(x / denom)).ToList();
+        var ranks = rankedProbability.Ranks(RankDefinition.Min);
+        var maxOrdinal = ranks.Max();
+
+        return ranks.Select(x => (int)Math.Abs(x - maxOrdinal) + 1).ToArray()
+            .Zip(rankedProbability, (i, d) => (i, d))
+            .ToList();
     }
 
     public IEnumerable<double> PredictWin(List<Team> teams)
