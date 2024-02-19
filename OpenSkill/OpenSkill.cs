@@ -52,7 +52,7 @@ public class OpenSkill
         return result;
     }
 
-    private List<(int rank, double probability)> PredictRank(List<Team> pureTeams)
+    public List<(int rank, double probability)> PredictRank(List<Team> pureTeams)
     {
         var n = pureTeams.Count;
         var totalPlayerCount = pureTeams.Sum(x => x.Ratings.Count);
